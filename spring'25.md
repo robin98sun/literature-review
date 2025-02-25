@@ -1719,7 +1719,7 @@ and ICSI)<br>
 
   <tr>
   	<td>
-	    ** <b><a href="https://www.usenix.org/conference/nsdi24/presentation/namyar-solving">Solving Max-Min Fair Resource Allocations Quickly on Large Graphs</a></b>
+	    <b><a href="https://www.usenix.org/conference/nsdi24/presentation/namyar-solving">Solving Max-Min Fair Resource Allocations Quickly on Large Graphs</a></b>
 	    <p>
 				Pooria Namyar (Microsoft and University of Southern California)<br>
 				Behnaz Arzani and Srikanth Kandula (Microsoft)<br>
