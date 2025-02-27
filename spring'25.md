@@ -1810,6 +1810,227 @@ and ICSI)<br>
 		</td>
   </tr>
 
+  <tr>
+  	<td>
+	    <b><a href="https://dl.acm.org/doi/abs/10.1145/3627703.3629572">CDMPP: A Device-Model Agnostic Framework for Latency Prediction of Tensor Programs</a></b>
+	    <p>
+				Hanpeng Hu, Junwei Su, Juntao Zhao (The University of Hong Kong)<br>
+				Yanghua Peng, Yibo Zhu, Haibin Lin (ByteDance Inc.)<br>
+				Chuan Wu (The University of Hong Kong)
+	    </p>
+	    <p>
+	    	<b>Labels:</b> ML system, latency prediction
+	    </p>
+			<p> 
+				<b>Abstract:</b> Deep Neural Networks (DNNs) have shown excellent performance in a wide range of machine learning applications. Knowing the latency of running a DNN model or tensor program on a specific device is useful in various tasks, such as DNN graph- or tensor-level optimization and device selection. Considering the large space of DNN models and devices that impedes direct profiling of all combinations, recent efforts focus on building a predictor to model the performance of DNN models on different devices. However, none of the existing attempts have achieved a cost model that can accurately predict the performance of various tensor programs while supporting both training and inference accelerators. We propose CDMPP, an efficient tensor program latency prediction framework for both cross-model and cross-device prediction. We design an informative but efficient representation of tensor programs, called compact ASTs, and a pre-order-based positional encoding method, to capture the internal structure of tensor programs. We develop a domain-adaption-inspired method to learn domain-invariant representations and devise a KMeans-based sampling algorithm, for the predictor to learn from different domains (i.e., different DNN operators and devices). Our extensive experiments on a diverse range of DNN models and devices demonstrate that CDMPP significantly outperforms state-of-the-art baselines with 14.03% and 10.85% prediction error for cross-model and cross-device prediction, respectively, and one order of magnitude higher training efficiency. The implementation and the expanded dataset are available at https://github.com/joapolarbear/cdmpp.
+			</p>
+			<p><a href="https://github.com/joapolarbear/cdmpp">open source</a></p>
+			<p></p>
+		</td>
+  </tr>
+
+  <tr>
+  	<td>
+	    <b><a href="https://dl.acm.org/doi/abs/10.1145/3627703.3629573">Concealing Compression-accelerated I/O for HPC Applications through In Situ Task Scheduling</a></b>
+	    <p>
+				Sian Jin (Indiana University)<br>
+				Sheng Di (Argonne National Laboratory)<br>
+				Frédéric Vivien (INRIA, France)<br>
+				Daoce Wang (Indiana University)<br>
+				Yves Robert (Ecole Normale Supérieure de Lyon, France)<br>
+				Dingwen Tao (Indiana University)<br>
+				Franck Cappello (Argonne National Laboratory)
+	    </p>
+	    <p>
+	    	<b>Labels:</b> ML system, latency prediction
+	    </p>
+			<p> 
+				<b>Abstract:</b> Lossy compression and asynchronous I/O are two of the most effective solutions for reducing storage overhead and enhancing I/O performance in large-scale high-performance computing (HPC) applications. However, current approaches have limitations that prevent them from fully leveraging lossy compression, and they may also result in task collisions, which restrict the overall performance of HPC applications. To address these issues, we propose an optimization approach for the task scheduling problem that encompasses computation, compression, and I/O. Our algorithm adaptively selects the optimal compression and I/O queue to minimize the performance degradation of the computation. We also introduce an intra-node I/O workload balancing mechanism that evenly distributes the workload across different processes. Additionally, we design a framework that incorporates fine-grained compression, a compressed data buffer, and a shared Huffman tree to fully benefit from our proposed task scheduling. Experimental results with up to 16 nodes and 64 GPUs from ORNL Summit, as well as real-world HPC applications, demonstrate that our solution reduces I/O overhead by up to 3.8× and 2.6× compared to non-compression and asynchronous I/O solutions, respectively.
+			</p>
+			<p></p>
+		</td>
+  </tr>
+
+  <tr>
+  	<td>
+	    ** <b><a href="https://dl.acm.org/doi/10.1145/3627703.3629575">Totoro: A Scalable Federated Learning Engine for the Edge</a></b>
+	    <p>
+				Cheng-Wei Ching (University of California Santa Cruz)<br>
+				Xin Chen (Georgia Institute of Technology)<br>
+				Taehwan Kim, Bo Ji (Virginia Tech)<br>
+				Qingyang Wang (Louisiana State University)<br>
+				Dilma Da Silva (Texas A&M University)<br>
+				Liting Hu (University of California Santa Cruz and Virginia Tech)
+	    </p>
+	    <p>
+	    	<b>Labels:</b> ML system, edge computing, FL
+	    </p>
+			<p> 
+				<b>Abstract:</b> Federated Learning (FL) is an emerging distributed machine learning (ML) technique that enables in-situ model training and inference on decentralized edge devices. We propose Totoro, a novel scalable FL engine, that enables massive FL applications to run simultaneously on edge networks. The key insight is to explore a distributed hash table (DHT)-based peer-to-peer (P2P) model to re-architect the centralized FL system design into a fully decentralized one. In contrast to previous studies where many FL applications shared one centralized parameter server, Totoro assigns a dedicated parameter server to each individual application. Any edge node can act as any application's coordinator, aggregator, client selector, worker (participant device), or any combination of the above, thereby radically improving scalability and adaptivity. Totoro introduces three innovations to realize its design: a locality-aware P2P multi-ring structure, a publish/subscribe-based forest abstraction, and a bandit-based exploitation-exploration path planning model. Real-world experiments on 500 Amazon EC2 servers show that Totoro scales gracefully with the number of FL applications and N edge nodes, speeds up the total training time by 1.2 × -14.0×, achieves O (logN) hops for model dissemination and gradient aggregation with millions of nodes, and efficiently adapts to the practical edge networks and churns.
+			</p>
+			<p></p>
+		</td>
+  </tr>
+
+
+  <tr>
+  	<td>
+	    ** <b><a href="https://dl.acm.org/doi/10.1145/3627703.3629575">Totoro: A Scalable Federated Learning Engine for the Edge</a></b>
+	    <p>
+				Cheng-Wei Ching (University of California Santa Cruz)<br>
+				Xin Chen (Georgia Institute of Technology)<br>
+				Taehwan Kim, Bo Ji (Virginia Tech)<br>
+				Qingyang Wang (Louisiana State University)<br>
+				Dilma Da Silva (Texas A&M University)<br>
+				Liting Hu (University of California Santa Cruz and Virginia Tech)
+	    </p>
+	    <p>
+	    	<b>Labels:</b> ML system, edge computing, FL
+	    </p>
+			<p> 
+				<b>Abstract:</b> Federated Learning (FL) is an emerging distributed machine learning (ML) technique that enables in-situ model training and inference on decentralized edge devices. We propose Totoro, a novel scalable FL engine, that enables massive FL applications to run simultaneously on edge networks. The key insight is to explore a distributed hash table (DHT)-based peer-to-peer (P2P) model to re-architect the centralized FL system design into a fully decentralized one. In contrast to previous studies where many FL applications shared one centralized parameter server, Totoro assigns a dedicated parameter server to each individual application. Any edge node can act as any application's coordinator, aggregator, client selector, worker (participant device), or any combination of the above, thereby radically improving scalability and adaptivity. Totoro introduces three innovations to realize its design: a locality-aware P2P multi-ring structure, a publish/subscribe-based forest abstraction, and a bandit-based exploitation-exploration path planning model. Real-world experiments on 500 Amazon EC2 servers show that Totoro scales gracefully with the number of FL applications and N edge nodes, speeds up the total training time by 1.2 × -14.0×, achieves O (logN) hops for model dissemination and gradient aggregation with millions of nodes, and efficiently adapts to the practical edge networks and churns.
+			</p>
+			<p></p>
+		</td>
+  </tr>
+
+
+
+  <tr>
+  	<td>
+	    *** <b><a href="https://dl.acm.org/doi/10.1145/3627703.3629578">Orion: Interference-aware, Fine-grained GPU Sharing for ML Applications</a></b>
+	    <p>
+				Foteini Strati, Xianzhe Ma, Ana Klimovic (ETH Zurich)
+	    </p>
+	    <p>
+	    	<b>Labels:</b> ML system, GPU sharing
+	    </p>
+			<p> 
+				<b>Abstract:</b> GPUs are critical for maximizing the throughput-per-Watt of deep neural network (DNN) applications. However, DNN applications often underutilize GPUs, even when using large batch sizes and eliminating input data processing or communication stalls. DNN workloads consist of data-dependent operators, with different compute and memory requirements. While an operator may saturate GPU compute units or memory bandwidth, it often leaves other GPU resources idle. Despite the prevalence of GPU sharing techniques, current approaches are not sufficiently fine-grained or interference-aware to maximize GPU utilization while minimizing interference at the granularity of 10s of μs. We propose Orion, a system that transparently intercepts GPU kernel launches from multiple clients sharing a GPU. Orion schedules work on the GPU at the granularity of individual operators and minimizes interference by taking into account each operator's compute and memory requirements. We integrate Orion in PyTorch and demonstrate its benefits in various DNN workload collocation use cases. Orion significantly improves tail latency compared to state-of-the-art baselines for a high-priority inference job while collocating best-effort inference jobs to increase per-GPU request throughput by up to 7.3×, or while collocating DNN training, saving up to 1.49× in training costs compared to dedicated GPU allocation.
+			</p>
+			<p></p>
+		</td>
+  </tr>
+
+
+
+  <tr>
+  	<td>
+	    <b><a href="https://dl.acm.org/doi/10.1145/3627703.3629580">HAP: SPMD DNN Training on Heterogeneous GPU Clusters with Automated Program Synthesis</a></b>
+	    <p>
+				Shiwei Zhang (The University of Hong Kong)<br>
+				Lansong Diao (Alibaba Group)<br>
+				Chuan Wu (The University of Hong Kong)<br>
+				Zongyan Cao, Siyu Wang, Wei Lin (Alibaba Group)
+	    </p>
+	    <p>
+	    	<b>Labels:</b> ML system, SPMD parallelism, DNN training
+	    </p>
+			<p> 
+				<b>Abstract:</b> Single-Program-Multiple-Data (SPMD) parallelism has recently been adopted to train large deep neural networks (DNNs). Few studies have explored its applicability on heterogeneous clusters, to fully exploit available resources for large model learning. This paper presents HAP, an automated system designed to expedite SPMD DNN training on heterogeneous clusters. HAP jointly optimizes the tensor sharding strategy, sharding ratios across heterogeneous devices and the communication methods for tensor exchanges for optimized distributed training with SPMD parallelism. We novelly formulate model partitioning as a program synthesis problem, in which we generate a distributed program from scratch on a distributed instruction set that semantically resembles the program designed for a single device, and systematically explore the solution space with an A-based search algorithm. We derive the optimal tensor sharding ratios by formulating it as a linear programming problem. Additionally, HAP explores tensor communication optimization in a heterogeneous cluster and integrates it as part of the program synthesis process, for automatically choosing optimal collective communication primitives and applying sufficient factor broadcasting technique. Extensive experiments on representative workloads demonstrate that HAP achieves up to 2.41x speed-up on heterogeneous clusters.
+			</p>
+			<p></p>
+		</td>
+  </tr>
+
+  <tr>
+  	<td>
+	    * <b><a href="https://dl.acm.org/doi/10.1145/3627703.3629581">TraceUpscaler: Upscaling Traces to Evaluate Systems at High Load</a></b>
+	    <p>
+				Sultan Mahmud Sajal, Timothy Zhu, Bhuvan Urgaonkar (The Pennsylvania State University)<br>
+				Siddhartha Sen (Microsoft Research)
+	    </p>
+	    <p>
+	    	<b>Labels:</b> trace, evaluation
+	    </p>
+			<p> 
+				<b>Abstract:</b> Trace replay is a common approach for evaluating systems by rerunning historical traffic patterns, but it is not always possible to find suitable real-world traces at the desired level of system load. Experimenting with higher traffic loads requires upscaling a trace to artificially increase the load. Unfortunately, most prior research has adopted ad-hoc approaches for upscaling, and there has not been a systematic study of how the upscaling approach impacts the results. One common approach is to count the arrivals in a predefined time-interval and multiply these counts by a factor, but this requires generating new requests/jobs according to some model (e.g., a Poisson process), which may not be realistic. Another common approach is to divide all the timestamps in the trace by an upscaling factor to squeeze the requests into a shorter time period. However, this can distort temporal patterns within the input trace. This paper evaluates the pros and cons of existing trace upscaling techniques and introduces a new approach, TraceUpscaler, that avoids the drawbacks of existing methods. The key idea behind TraceUpscaler is to decouple the arrival timestamps from the request parameters/data and upscale just the arrival timestamps in a way that preserves temporal patterns within the input trace. Our work applies to open-loop traffic where requests have arrival timestamps that aren't dependent on previous request completions. We evaluate TraceUpscaler under multiple experimental settings using both real-world and synthetic traces. Through our study, we identify the trace characteristics that affect the quality of upscaling in existing approaches and show how TraceUpscaler avoids these pitfalls. We also present a case study demonstrating how inaccurate trace upscaling can lead to incorrect conclusions about a system's ability to handle high load.
+			</p>
+			<p></p>
+		</td>
+  </tr>
+
+
+  <tr>
+  	<td>
+	    * <b><a href="https://dl.acm.org/doi/10.1145/3627703.3629583">Blox: A Modular Toolkit for Deep Learning Schedulers</a></b>
+	    <p>
+				Saurabh Agarwal (University of Wisconsin-Madison)<br>
+				Amar Phanishayee (Microsoft Research)<br>
+				Shivaram Venkataraman (University of Wisconsin-Madison)
+	    </p>
+	    <p>
+	    	<b>Labels:</b> ML system, DL scheduler
+	    </p>
+			<p> 
+				<b>Abstract:</b> Deep Learning (DL) workloads have rapidly increased in popularity in enterprise clusters and several new cluster schedulers have been proposed in recent years to support these workloads. With rapidly evolving DL workloads, it is challenging to quickly prototype and compare scheduling policies across workloads. Further, as prior systems target different aspects of scheduling (resource allocation, placement, elasticity etc.), it is also challenging to combine these techniques and understand the overall benefits. To address these challenges we propose Blox, a modular toolkit which allows developers to compose individual components and realize diverse scheduling frameworks. We identify a set of core abstractions for DL scheduling, implement several existing schedulers using these abstractions, and verify the fidelity of these implementations by reproducing results from prior research. We also highlight how we can evaluate and compare existing schedulers in new settings: different workload traces, higher cluster load, change in DNN workloads and deployment characteristics. Finally, we showcase Blox's extensibility by composing policies from different schedulers, and implementing novel policies with minimal code changes. Blox is available at https://github.com/msr-fiddle/blox.
+			</p>
+			<p><a href="https://github.com/msr-fiddle/blox">open source</a></p>
+			<p></p>
+		</td>
+  </tr>
+
+  <tr>
+  	<td>
+	    <b><a href="https://dl.acm.org/doi/10.1145/3627703.3629585">DynaPipe: Optimizing Multi-task Training through Dynamic Pipelines
+</a></b>
+	    <p>
+				Chenyu Jiang (The University of Hong Kong)<br>
+				Zhen Jia (Amazon Web Services)<br>
+				Shuai Zheng (Boson AI)<br>
+				Yida Wang (Amazon Web Services)<br>
+				Chuan Wu (The University of Hong Kong)
+	    </p>
+	    <p>
+	    	<b>Labels:</b> ML system, DL scheduler
+	    </p>
+			<p> 
+				<b>Abstract:</b> Multi-task model training has been adopted to enable a single deep neural network model (often a large language model) to handle multiple tasks (e.g., question answering and text summarization). Multi-task training commonly receives input sequences of highly different lengths due to the diverse contexts of different tasks. Padding (to the same sequence length) or packing (short examples into long sequences of the same length) is usually adopted to prepare input samples for model training, which is nonetheless not space or computation efficient. This paper proposes a dynamic micro-batching approach to tackle sequence length variation and enable efficient multi-task model training. We advocate pipelineparallel training of the large model with variable-length micro-batches, each of which potentially comprises a different number of samples. We optimize micro-batch construction using a dynamic programming-based approach, and handle micro-batch execution time variation through dynamic pipeline and communication scheduling, enabling highly efficient pipeline training. Extensive evaluation on the FLANv2 dataset demonstrates up to 4.39x higher training throughput when training T5, and 3.25x when training GPT, as compared with packing-based baselines. DynaPipe's source code is publicly available at https://github.com/awslabs/optimizing-multitask-training-through-dynamic-pipelines.
+			</p>
+			<p><a href="https://github.com/awslabs/optimizing-multitask-training-through-dynamic-pipelines">open source</a></p>
+			<p></p>
+		</td>
+  </tr>
+
+  <tr>
+  	<td>
+	    <b><a href="https://dl.acm.org/doi/10.1145/3627703.3650074">GMorph: Accelerating Multi-DNN Inference via Model Fusion</a></b>
+	    <p>
+				Qizheng Yang, Tianyi Yang, Mingcan Xiang Lijun Zhang (University of Massachusetts Amherst)<br>
+				Haoliang Wang (Adobe Research)<br>
+				Marco Serafini, Hui Guan (University of Massachusetts Amherst)
+	    </p>
+	    <p>
+	    	<b>Labels:</b> DNN training, multi-task learning, MTL, model fusion
+	    </p>
+			<p> 
+				<b>Abstract:</b> AI-powered applications often involve multiple deep neural network (DNN)-based prediction tasks to support application-level functionalities. However, executing multi-DNNs can be challenging due to the high resource demands and computation costs that increase linearly with the number of DNNs. Multi-task learning (MTL) addresses this problem by designing a multi-task model that shares parameters across tasks based on a single backbone DNN. This paper explores an alternative approach called model fusion: rather than training a single multi-task model from scratch as MTL does, model fusion fuses multiple task-specific DNNs that are pre-trained separately and can have heterogeneous architectures into a single multi-task model. We materialize model fusion in a software framework called GMorph to accelerate multi-DNN inference while maintaining task accuracy. GMorph features three main technical contributions: graph mutations to fuse multi-DNNs into resource-efficient multi-task models, search-space sampling algorithms, and predictive filtering to reduce the high search costs. Our experiments show that GMorph can outperform MTL baselines and reduce the inference latency of multi-DNNs by 1.1-3× while meeting the target task accuracy.
+			</p>
+			<p></p>
+		</td>
+  </tr>
+
+  <tr>
+  	<td>
+	    <b><a href="https://dl.acm.org/doi/10.1145/3627703.3650083">ScheMoE: An Extensible Mixture-of-Experts Distributed Training System with Tasks Scheduling</a></b>
+	    <p>
+				Shaohuai Shi (Harbin Institute of Technology, Shenzhen)<br>
+				Xinglin Pan (The Hong Kong University of Science and Technology (Guangzhou))<br>
+				Qiang Wang (Harbin Institute of Technology, Shenzhen)<br>
+				Chengjian Liu (Shenzhen Technology University)<br>
+				Xiaozhe Ren, Zhongzhe Hu Yu Yang (Huawei Central Research Institute, Huawei Technologies)<br>
+				Bo Li (The Hong Kong University of Science and Technology)<br>
+				Xiaowen Chu (The Hong Kong University of Science and Technology (Guangzhou))
+	    </p>
+	    <p>
+	    	<b>Labels:</b> DNN training, multi-task learning, MTL, model fusion
+	    </p>
+			<p> 
+				<b>Abstract:</b> In recent years, large-scale models can be easily scaled to trillions of parameters with sparsely activated mixture-of-experts (MoE), which significantly improves the model quality while only requiring a sub-linear increase in computational costs. However, MoE layers require the input data to be dynamically routed to a particular GPU for computing during distributed training. The highly dynamic property of data routing and high communication costs in MoE make the training system low scaling efficiency on GPU clusters. In this work, we propose an extensible and efficient MoE training system, ScheMoE, which is equipped with several features. 1) ScheMoE provides a generic scheduling framework that allows the communication and computation tasks in training MoE models to be scheduled in an optimal way. 2) ScheMoE integrates our proposed novel all-to-all collective which better utilizes intra- and inter-connect bandwidths. 3) ScheMoE supports easy extensions of customized all-to-all collectives and data compression approaches while enjoying our scheduling algorithm. Extensive experiments are conducted on a 32-GPU cluster and the results show that ScheMoE outperforms existing state-of-the-art MoE systems, Tutel and Faster-MoE, by 9%-30%.
+			</p>
+			<p></p>
+		</td>
+  </tr>
 
 </table>
 
