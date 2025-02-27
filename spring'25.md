@@ -11,6 +11,7 @@ From Feb 20th, 2025
 	- [HPDC'24](#HPDC'24)
 	- [EuroSys'25](#EuroSys'25)
 	- [NSDI'24](#NSDI'24)
+	- [EuroSys'24](#EuroSys'24)
 
 	- going to collect:
 
@@ -1763,6 +1764,52 @@ and ICSI)<br>
 			<p></p>
 		</td>
   </tr>
+
+</table>
+
+
+<a name="EuroSys'24"></a>
+1. [EurySys'24](https://2024.eurosys.org/accepted-papers.html)
+
+
+<table>
+
+
+  <tr>
+  	<td>
+	    <b><a href="https://dl.acm.org/doi/10.1145/3627703.3629565">Model Selection for Latency-Critical Inference Serving</a></b>
+	    <p>
+				Daniel Mendoza, Francisco Romero, Caroline Trippel (Stanford University)
+	    </p>
+	    <p>
+	    	<b>Labels:</b> ML system
+	    </p>
+			<p> 
+				<b>Abstract:</b> In an inference service system, model selection and scheduling (MS&S) schemes map inference queries to trained machine learning (ML) models, hosted on a finite set of workers, to solicit accurate predictions within strict latency targets. MS&S is challenged by both varying query load and stochastic query inter-arrival patterns; however, state-of-the-art MS&S approaches conservatively account for load exclusively.
+				<br>
+				In this paper, we first show that explicitly considering inter-arrival patterns creates opportunities to map queries to higher-accuracy (higher-latency) models during intermittent arrival lulls. We then propose RAMSIS, a framework for generating MS&S policies that exploits this finding. RAMSIS leverages a statistical problem model of query load and inter-arrival pattern to produce policies that maximize accuracy given some latency target. We evaluate RAMSIS-generated MS&S policies alongside state-of-the-art approaches. Notably, RAMSIS requires as low as 50.00% (on average 18.77%) fewer resources to achieve the same accuracy for an ImageNet image classification task given 26 trained models
+			</p>
+			<p></p>
+		</td>
+  </tr>
+
+
+  <tr>
+  	<td>
+	    <b><a href="https://dl.acm.org/doi/abs/10.1145/3627703.3629569">Enoki: High Velocity Linux Kernel Scheduler Development</a></b>
+	    <p>
+				Samantha Miller (University of Washington), Anirudh Kumar (University of Washington), Tanay Vakharia (University of Washington), Ang Chen (University of Michigan), Danyang Zhuo (Duke University), Thomas Anderson (University of Washington)
+	    </p>
+	    <p>
+	    	<b>Labels:</b> ML system
+	    </p>
+			<p> 
+				<b>Abstract:</b> Kernel task scheduling is important for application performance, adaptability to new hardware, and complex user requirements. However, developing, testing, and debugging new scheduling algorithms in Linux, the most widely used cloud operating system, is slow and difficult. We developed Enoki, a framework for high velocity development of Linux kernel schedulers. Enoki schedulers are written in safe Rust, and the system supports live upgrade of new scheduling policies into the kernel, userspace debugging, and bidirectional communication with applications. A scheduler implemented with Enoki achieved near identical performance (within 1% on average) to the default Linux scheduler CFS on a wide range of benchmarks. Enoki is also able to support a range of research schedulers, specifically the Shinjuku scheduler, a locality aware scheduler, and the Arachne core arbiter, with good performance.
+			</p>
+			<p></p>
+		</td>
+  </tr>
+
 
 </table>
 
