@@ -2032,5 +2032,49 @@ and ICSI)<br>
 		</td>
   </tr>
 
+
+  <tr>
+  	<td>
+	    <b><a href="https://dl.acm.org/doi/10.1145/3627703.3650084">Erlang: Application-Aware Autoscaling for Cloud Microservices</a></b>
+	    <p>
+				Vighnesh Sachidananda (Google)<br>
+				Anirudh Sivaraman (NYU)
+	    </p>
+	    <p>
+	    	<b>Labels:</b> DNN training, multi-task learning, MTL, model fusion
+	    </p>
+			<p> 
+				<b>Abstract:</b> As cloud applications shift from monoliths to loosely coupled microservices, application developers must decide how many compute resources (e.g., number of replicated containers) to assign to each microservice within an application. This decision affects both (1) the dollar cost to the application developer and (2) the end-to-end latency perceived by the application user. Today, individual microservices are autoscaled independently by adding VMs whenever per-microservice CPU or memory utilization crosses a configurable threshold. However, an application user's end-to-end latency consists of time spent on multiple microservices and each microservice might need a different number of VMs to achieve an overall end-to-end latency.
+				<br>
+				We present Erlang, an autoscaler for microservice-based applications, which collectively allocates VMs to microservices with a global goal of minimizing dollar cost while keeping end-to-end application latency under a given target. Using 5 open-source applications, we compared Erlang to several utilization and machine learning based autoscalers. We evaluate Erlang across different compute settings on Google Kubernetes Engine (GKE) in which users manage compute resources, GKE standard, and a new mode of operation in which the cloud provider manages compute infrastructure, GKE Autopilot. Erlang meets a desired median or tail latency target on 53 of 63 workloads where it provides a cost reduction of 19.3%, on average, over the next cheapest autoscaler. Erlang is the most cost effective autoscaling policy for 48 of these 53 workloads. The cost savings from managing a cluster with Erlang result in Erlang paying for its training cost in a few days. On smaller applications, for which we can exhaustively search microservice configurations, we find that Erlang is optimal for 90% of cases and near optimal otherwise. Code for Erlang is available at https://github.com/vigsachi/erlang
+			</p>
+			<p><a href="https://github.com/vigsachi/erlang">open sources</a></p>
+			<p></p>
+		</td>
+  </tr>
+
+
+  <tr>
+  	<td>
+	    <b><a href="https://dl.acm.org/doi/10.1145/3627703.3650088">ZKML: An Optimizing System for ML Inference in Zero-Knowledge Proofs</a></b>
+	    <p>
+				Bing-Jyue Chen (UIUC)<br>
+				Suppakit Waiwitlikhit (Stanford)<br>
+				Ion Stoica (UC Berkeley)<br>
+				Daniel Kang (UIUC)
+	    </p>
+	    <p>
+	    	<b>Labels:</b> DNN training, multi-task learning, MTL, model fusion
+	    </p>
+			<p> 
+				<b>Abstract:</b> Machine learning (ML) is increasingly used behind closed systems and APIs to make important decisions. For example, social media uses ML-based recommendation algorithms to decide what to show users, and millions of people pay to use ChatGPT for information every day. Because ML is deployed behind these closed systems, there are increasing calls for transparency, such as releasing model weights. However, these service providers have legitimate reasons not to release this information, including for privacy and trade secrets. To bridge this gap, recent work has proposed using zero-knowledge proofs (specifically a form called ZK-SNARKs) for certifying computation with private models but has only been applied to unrealistically small models.
+				<br>
+				In this work, we present the first framework, ZKML, to produce ZK-SNARKs for realistic ML models, including state-of-the-art vision models, a distilled GPT-2, and the ML model powering Twitter's recommendations. We accomplish this by designing an optimizing compiler from TensorFlow to circuits in the halo2 ZK-SNARK proving system. There are many equivalent ways to implement the same operations within ZK-SNARK circuits, and these design choices can affect performance by 24×. To efficiently compile ML models, ZKML contains two parts: gadgets (efficient constraints for low-level operations) and an optimizer to decide how to lay out the gadgets within a circuit. Combined, these optimizations enable proving on a wider range of models, faster proving, faster verification, and smaller proofs compared to prior work.
+			</p>
+			<p></p>
+		</td>
+  </tr>
+
+
 </table>
 
