@@ -2023,7 +2023,7 @@ and ICSI)<br>
 				Xiaowen Chu (The Hong Kong University of Science and Technology (Guangzhou))
 	    </p>
 	    <p>
-	    	<b>Labels:</b> DNN training, multi-task learning, MTL, model fusion
+	    	<b>Labels:</b> DNN training, ML System
 	    </p>
 			<p> 
 				<b>Abstract:</b> In recent years, large-scale models can be easily scaled to trillions of parameters with sparsely activated mixture-of-experts (MoE), which significantly improves the model quality while only requiring a sub-linear increase in computational costs. However, MoE layers require the input data to be dynamically routed to a particular GPU for computing during distributed training. The highly dynamic property of data routing and high communication costs in MoE make the training system low scaling efficiency on GPU clusters. In this work, we propose an extensible and efficient MoE training system, ScheMoE, which is equipped with several features. 1) ScheMoE provides a generic scheduling framework that allows the communication and computation tasks in training MoE models to be scheduled in an optimal way. 2) ScheMoE integrates our proposed novel all-to-all collective which better utilizes intra- and inter-connect bandwidths. 3) ScheMoE supports easy extensions of customized all-to-all collectives and data compression approaches while enjoying our scheduling algorithm. Extensive experiments are conducted on a 32-GPU cluster and the results show that ScheMoE outperforms existing state-of-the-art MoE systems, Tutel and Faster-MoE, by 9%-30%.
@@ -2041,7 +2041,7 @@ and ICSI)<br>
 				Anirudh Sivaraman (NYU)
 	    </p>
 	    <p>
-	    	<b>Labels:</b> DNN training, multi-task learning, MTL, model fusion
+	    	<b>Labels:</b> cloud computing, microservice, autoscaling
 	    </p>
 			<p> 
 				<b>Abstract:</b> As cloud applications shift from monoliths to loosely coupled microservices, application developers must decide how many compute resources (e.g., number of replicated containers) to assign to each microservice within an application. This decision affects both (1) the dollar cost to the application developer and (2) the end-to-end latency perceived by the application user. Today, individual microservices are autoscaled independently by adding VMs whenever per-microservice CPU or memory utilization crosses a configurable threshold. However, an application user's end-to-end latency consists of time spent on multiple microservices and each microservice might need a different number of VMs to achieve an overall end-to-end latency.
@@ -2064,7 +2064,7 @@ and ICSI)<br>
 				Daniel Kang (UIUC)
 	    </p>
 	    <p>
-	    	<b>Labels:</b> DNN training, multi-task learning, MTL, model fusion
+	    	<b>Labels:</b> ML inference, work proof
 	    </p>
 			<p> 
 				<b>Abstract:</b> Machine learning (ML) is increasingly used behind closed systems and APIs to make important decisions. For example, social media uses ML-based recommendation algorithms to decide what to show users, and millions of people pay to use ChatGPT for information every day. Because ML is deployed behind these closed systems, there are increasing calls for transparency, such as releasing model weights. However, these service providers have legitimate reasons not to release this information, including for privacy and trade secrets. To bridge this gap, recent work has proposed using zero-knowledge proofs (specifically a form called ZK-SNARKs) for certifying computation with private models but has only been applied to unrealistically small models.
@@ -2078,3 +2078,108 @@ and ICSI)<br>
 
 </table>
 
+
+
+
+
+<a name="SOSP'24"></a>
+1. [SOSP'24](https://sigops.org/s/conferences/sosp/2024/accepted.html)
+
+<table>
+
+  <tr>
+  	<td>
+	    <b><a href="https://dl.acm.org/doi/10.1145/3694715.3695963">Apparate: Rethinking Early Exits to Tame Latency-Throughput Tensions in ML Serving</a></b>
+	    <p>
+				Yinwei Dai, Rui Pan (Princeton University)<br>
+				Anand Iyer (Georgia Tech)<br>
+				Kai Li (Princeton University), Ravi Netravali (Princeton University)
+	    </p>
+	    <p>
+	    	<b>Labels:</b> ML system, DL inference
+	    </p>
+			<p> 
+				<b>Abstract:</b> Machine learning (ML) inference platforms are tasked with balancing two competing goals: ensuring high throughput given many requests, and delivering low-latency responses to support interactive applications. Unfortunately, existing platform knobs (e.g., batch sizes) fail to ease this fundamental tension, and instead only enable users to harshly trade off one property for the other. This paper explores an alternate strategy to taming throughput-latency tradeoffs by changing the granularity at which inference is performed. We present Apparate, a system that automatically applies and manages early exits (EEs) in ML models, whereby certain inputs can exit with results at intermediate layers. To cope with the time-varying overhead and accuracy challenges that EEs bring, Apparate repurposes exits to provide continual feedback that powers several novel runtime monitoring and adaptation strategies. Apparate lowers median response latencies by 40.5--91.5% and 10.0--24.2% for diverse CV and NLP classification workloads, and median time-per-token latencies by 22.6--77.9% for generative scenarios, without affecting throughputs or violating tight accuracy constraints.
+			</p>
+			<p></p>
+		</td>
+  </tr>
+
+  <tr>
+  	<td>
+	    <b><a href="https://dl.acm.org/doi/10.1145/3694715.3695969">Enabling Parallelism Hot Switching for Efficient Training of Large Language Models</a></b>
+	    <p>
+				Hao Ge, Fangcheng Fu, Haoyang Li, Xuanyu Wang, Sheng Lin, Yujie Wang, Xiaonan Nie, Hailin Zhang (Peking University)<br>
+				Xupeng Miao (Carnegie Mellon University)<br>
+				Bin Cui (Peking University)
+	    </p>
+	    <p>
+	    	<b>Labels:</b> LLM training, parallelism hot switching
+	    </p>
+			<p> 
+				<b>Abstract:</b> Training of large-scale deep learning models necessitates parallelizing the model and data across numerous devices, and the choice of parallelism strategy substantially depends on the training workloads such as memory consumption, computation cost, and communication cost. Current approaches generally assume uniform training workloads across samples in a given task. Thus, existing systems are designed to adopt a static parallelism strategy throughout one training process. Nevertheless, when training models with sequence inputs, this assumption fails due to the sequence length variation across samples. Consequently, training with a static parallelism strategy would result in sub-optimal performance.
+				<br>
+				In this paper, we first reveal the under-explored fact that the optimal parallelism strategy varies even for the sequences within a single mini-batch. Motivated by this, we present HotSPa, a novel system that adopts multiple parallelism strategies for efficient training with sequence inputs. To be specific, given a mini-batch of training sequences, HotSPa partitions them into multiple groups and applies different parallelism strategies to process each group individually. To enable the hot switching between strategies, HotSPa transfers model parameters and accumulated gradients among the devices on the fly. Significant solutions are proposed with the hope of seamless and rapid parallelism hot switching. Firstly, we design a graph compiler, which generates distributed computation graphs for different parallelism strategies simultaneously, and orchestrates them to share a single model storage backbone. Secondly, we develop a simple yet effective hot switch planner, which heuristically deduces communication plans to accelerate the transition of model partitioning given any pairs of strategies. Extensive experiments on large language model training demonstrate that HotSPa can be up to 2.99× faster than Megatron-LM and DeepSpeed that utilize static parallelism strategies. Source code is available: https://github.com/PKU-DAIR/Hetu.
+			</p>
+			<p></p>
+		</td>
+  </tr>
+
+
+  <tr>
+  	<td>
+	    ** <b><a href="https://dl.acm.org/doi/10.1145/3694715.3695978">Improving DNN Inference Throughput Using Practical, Per-Input Compute Adaptation</a></b>
+	    <p>
+				Anand Iyer (Georgia Tech)<br>
+				Swapnil Gandhi (Stanford University)<br>
+				Mingyu Guan (Georgia Tech)<br>
+				Yinwei Dai, Rui Pan, Ravi Netravali (Princeton University)
+	    </p>
+	    <p>
+	    	<b>Labels:</b> ML System, DNN inference
+	    </p>
+			<p> 
+				<b>Abstract:</b> Machine learning inference platforms continue to face high request rates and strict latency constraints. Existing solutions largely focus on compressing models to substantially lower compute costs (and time) with mild accuracy degradations. This paper explores an alternate (but complementary) technique that trades off accuracy and resource costs on a perinput granularity: early exit models, which selectively allow certain inputs to exit a model from an intermediate layer. Though intuitive, early exits face fundamental deployment challenges, largely owing to the effects that exiting inputs have on batch size (and resource utilization) throughout model execution. We present E3, the first system that makes early exit models practical for realistic inference deployments. Our key insight is to split and replicate blocks of layers in models in a manner that maintains a constant batch size throughout execution, all the while accounting for resource requirements and communication overheads. Evaluations with NLP and vision models show that E3 can deliver up to 1.74× improvement in goodput (for a fixed cost) or 1.78× reduction in cost (for a fixed goodput). Additionally, E3's goodput wins generalize to autoregressive LLMs (2.8--3.8×) and compressed models (1.67×).
+			</p>
+			<p></p>
+		</td>
+  </tr>
+
+
+
+  <tr>
+  	<td>
+	    ** <b><a href="https://dl.acm.org/doi/10.1145/3694715.3695948">LoongServe: Efficiently Serving Long-Context Large Language Models with Elastic Sequence Parallelism</a></b>
+	    <p>
+				Bingyang Wu, Shengyu Liu, Yinmin Zhong, Peng Sun, Xuanzhe Liu, Xin Jin (Peking University)
+	    </p>
+	    <p>
+	    	<b>Labels:</b> ML System, LLM inference, LLM serving
+	    </p>
+			<p> 
+				<b>Abstract:</b> The context window of large language models (LLMs) is rapidly increasing, leading to a huge variance in resource usage between different requests as well as between different phases of the same request. Restricted by static parallelism strategies, existing LLM serving systems cannot efficiently utilize the underlying resources to serve variable-length requests in different phases. To address this problem, we propose a new parallelism paradigm, elastic sequence parallelism (ESP), to elastically adapt to the variance across different requests and phases. Based on ESP, we design and build LoongServe, an LLM serving system that (1) improves computation efficiency by elastically adjusting the degree of parallelism in real-time, (2) improves communication efficiency by reducing key-value cache migration overhead and overlapping partial decoding communication with computation, and (3) improves GPU memory efficiency by reducing key-value cache fragmentation across instances. Our evaluation under diverse real-world datasets shows that LoongServe improves the throughput by up to 3.85× compared to chunked prefill and 5.81× compared to prefill-decoding disaggregation.
+			</p>
+			<p></p>
+		</td>
+  </tr>
+
+
+
+  <tr>
+  	<td>
+	    *** <b><a href="https://dl.acm.org/doi/10.1145/3694715.3695964">PowerInfer: Fast Large Language Model Serving with a Consumer-grade GPU</a></b>
+	    <p>
+				Yixin Song, Zeyu Mi, Haotong Xie, Haibo Chen (Shanghai Jiao Tong University)
+	    </p>
+	    <p>
+	    	<b>Labels:</b> ML System, LLM inference, LLM serving
+	    </p>
+			<p> 
+				<b>Abstract:</b> This paper introduces PowerInfer, a high-speed Large Language Model (LLM) inference engine on a personal computer (PC) equipped with a single consumer-grade GPU. The key principle underlying the design of PowerInfer is exploiting the high locality inherent in LLM inference, characterized by a power-law distribution in neuron activation. This distribution indicates that a small subset of neurons, termed hot neurons, are consistently activated across inputs, while the majority, cold neurons, vary based on specific inputs. PowerInfer exploits such an insight to design a GPU-CPU hybrid inference engine: hot-activated neurons are preloaded onto the GPU for fast access, while cold-activated neurons are computed on the CPU, thus significantly reducing GPU memory demands and CPU-GPU data transfers. PowerInfer further integrates adaptive predictors and neuron-aware sparse operators, optimizing the efficiency of neuron activation and computational sparsity. The evaluation shows that PowerInfer significantly outperforms llama.cpp by up to 11.69× while retaining model accuracy across various LLMs (including OPT-175B) on a single NVIDIA RTX 4090 GPU. For the OPT-30B model, PowerInfer achieves performance comparable to that of a high-end server-grade A100 GPU, reaching 82% of its token generation rate on a single consumer-grade RTX 4090 GPU.
+			</p>
+			<p></p>
+		</td>
+  </tr>
+
+
+</table>
