@@ -2309,7 +2309,7 @@ and ICSI)<br>
 
   <tr>
   	<td>
-	    **** <b><a href="https://dl.acm.org/doi/10.1145/3694715.3695947">Unifying serverless and microservice workloads with SigmaOS</a></b>
+	    ** <b><a href="https://dl.acm.org/doi/10.1145/3694715.3695947">Unifying serverless and microservice workloads with SigmaOS</a></b>
 	    <p>
 				Ariel Szekely, Adam Belay, Robert Morris, Frans Kaashoek (MIT)
 	    </p>
