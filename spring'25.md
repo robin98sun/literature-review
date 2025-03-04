@@ -2182,4 +2182,154 @@ and ICSI)<br>
   </tr>
 
 
+  <tr>
+  	<td>
+	    <b><a href="https://arxiv.org/abs/2405.14009">ReCycle: Pipeline Adaptation for the Resilient Distributed Training of Large DNNs</a></b>
+	    <p>
+				Swapnil Gandhi, Mark Zhao, Athinagoras Skiadopoulos, Christos Kozyrakis (Stanford University)
+	    </p>
+	    <p>
+	    	<b>Labels:</b> ML System, pipeline adaption, DNN training, fault tolerant training
+	    </p>
+			<p> 
+				<b>Abstract:</b> Training large Deep Neural Network (DNN) models requires thousands of GPUs over the course of several days or weeks. At this scale, failures are frequent and can have a big impact on training throughput. Utilizing spare GPU servers to mitigate performance loss becomes increasingly costly as model sizes grow. ReCycle is a system designed for efficient DNN training in the presence of failures, without relying on spare servers. It exploits the inherent functional redundancy in distributed training systems -- where servers across data-parallel groups store the same model parameters -- and pipeline schedule bubbles within each data-parallel group. When servers fails, ReCycle dynamically re-routes micro-batches to data-parallel peers, allowing for uninterrupted training despite multiple failures. However, this re-routing can create imbalances across pipeline stages, leading to reduced training throughput. To address this, ReCycle introduces two key optimizations that ensure re-routed micro-batches are processed within the original pipeline schedule's bubbles. First, it decouples the backward pass into two phases: one for computing gradients for the input and another for calculating gradients for the parameters. Second, it avoids synchronization across pipeline stages by staggering the optimizer step. Together, these optimizations enable adaptive pipeline schedules that minimize or even eliminate training throughput degradation during failures. We describe a prototype for ReCycle and show that it achieves high training throughput under multiple failures, outperforming recent proposals for fault-tolerant training such as Oobleck and Bamboo by up to 1.46× and 1.64×, respectively.
+			</p>
+			<p></p>
+		</td>
+  </tr>
+
+  <tr>
+  	<td>
+	    <b><a href="https://dl.acm.org/doi/10.1145/3694715.3695970">Reducing Energy Bloat in Large Model Training</a></b>
+	    <p>
+				Jae-Won Chung (University of Michigan)<br>
+				Yile Gu (University of Washington)<br>
+				Insu Jang (University of Michigan)<br>
+				Luoxi Meng (University of California, San Diego)<br>
+				Nikhil Bansal, Mosharaf Chowdhury (University of Michigan)
+	    </p>
+	    <p>
+	    	<b>Labels:</b> ML System, DNN training, energy saving
+	    </p>
+			<p> 
+				<b>Abstract:</b> Training large AI models on numerous GPUs consumes a massive amount of energy, making power delivery one of the largest limiting factors in building and operating datacenters for AI workloads. However, we observe that not all energy consumed during training directly contributes to end-to-end throughput; a significant portion can be removed without slowing down training. We call this portion energy bloat.
+				<br>
+				In this work, we identify two independent sources of energy bloat in large model training and propose Perseus, a training system that mitigates both. To do this, Perseus obtains the time-energy tradeoff frontier of a large model training job using an efficient graph cut-based algorithm, and schedules computation energy consumption across time to reduce both types of energy bloat. Evaluation on large models, including GPT-3 and Bloom, shows that Perseus reduces the energy consumption of large model training by up to 30% without any throughput loss or hardware modification.
+			</p>
+			<p></p>
+		</td>
+  </tr>
+
+
+  <tr>
+  	<td>
+	    ** <b><a href="https://dl.acm.org/doi/10.1145/3694715.3695975">Tenplex: Dynamic Parallelism for Deep Learning using Parallelizable Tensor Collections</a></b>
+	    <p>
+				Marcel Wagenländer, Guo Li (Imperial College London)<br>
+				Bo Zhao (Aalto University)<br>
+				Luo Mai (University of Edinburgh)<br>
+				Peter Pietzuch (Imperial College London)
+	    </p>
+	    <p>
+	    	<b>Labels:</b> ML System, DNN training, energy saving
+	    </p>
+			<p> 
+				<b>Abstract:</b> Deep learning (DL) jobs use multi-dimensional parallelism, i.e., combining data, model, and pipeline parallelism, to use large GPU clusters efficiently. Long-running jobs may experience changes to their GPU allocation: (i) resource elasticity during training adds or removes GPUs; (ii) hardware maintenance may require redeployment on different GPUs; and (iii) GPU failures force jobs to run with fewer devices. Current DL frameworks tie jobs to a set of GPUs and thus lack support for these scenarios. In particular, they cannot change the multi-dimensional parallelism of an already-running job in an efficient and model-independent way.
+				<br>
+				We describe Tenplex, a state management library for DL systems that enables jobs to change their parallelism dynamically after the GPU allocation is updated at runtime. Tenplex achieves this through a new abstraction, a parallelizable tensor collection (PTC), that externalizes the job state during training. After a GPU change, Tenplex uses the PTC to transform the job state: the PTC repartitions the dataset state under data parallelism and exposes it to GPU workers through a virtual file system; and the PTC obtains the model state as partitioned checkpoints and transforms them to reflect the new parallelization configuration. For efficiency, Tenplex executes PTC transformations in parallel with minimum data movement between GPU workers. Our experiments show that Tenplex enables DL jobs to support dynamic parallelization with low overhead.
+			</p>
+			<p></p>
+		</td>
+  </tr>
+
+
+  <tr>
+  	<td>
+	    * <b><a href="https://dl.acm.org/doi/10.1145/3694715.3695955">Scaling Deep Learning Computation over the Inter-Core Connected Intelligence Processor with T10</a></b>
+	    <p>
+				Marcel Wagenländer, Guo Li (Imperial College London)<br>
+				Bo Zhao (Aalto University)<br>
+				Luo Mai (University of Edinburgh)<br>
+				Peter Pietzuch (Imperial College London)
+	    </p>
+	    <p>
+	    	<b>Labels:</b> ML System, deep learning computing, inter-core communication
+	    </p>
+			<p> 
+				<b>Abstract:</b> As AI chips incorporate numerous parallelized cores to scale deep learning (DL) computing, inter-core communication is enabled recently by employing high-bandwidth and low-latency interconnect links on the chip (e.g., Graphcore IPU). It allows each core to directly access the fast scratchpad memory in other cores, which enables new parallel computing paradigms. However, without proper support for the scalable inter-core connections in current DL compilers, it is hard for developers to exploit the benefits of this new architecture.
+				<br>
+				We present T10, the first DL compiler to exploit the inter-core communication bandwidth and distributed on-chip memory on AI chips. To formulate the computation and communication patterns of tensor operators in this new architecture, T10 introduces a distributed tensor abstraction rTensor. T10 maps a DNN model to execution plans with a generalized compute-shift pattern, by <b><i>partitioning DNN computation into sub-operators and mapping them to cores</i></b>, so that the cores can exchange data following predictable patterns. T10 makes globally optimized trade-offs between on-chip memory consumption and inter-core communication overhead, selects the best execution plan from a vast optimization space, and alleviates unnecessary inter-core communications. Our evaluation with a real inter-core connected AI chip, the Graphcore IPU, shows up to 3.3× performance improvement, and scalability support for larger models, compared to state-of-the-art DL compilers and vendor libraries.
+			</p>
+			<p></p>
+		</td>
+  </tr>
+
+
+
+  <tr>
+  	<td>
+	    * <b><a href="https://dl.acm.org/doi/10.1145/3694715.3695955">Tiered Memory Management: Access Latency is the Key!</a></b>
+	    <p>
+				Marcel Wagenländer, Guo Li (Imperial College London)<br>
+				Bo Zhao (Aalto University)<br>
+				Luo Mai (University of Edinburgh)<br>
+				Peter Pietzuch (Imperial College London)
+	    </p>
+	    <p>
+	    	<b>Labels:</b> ML System, deep learning computing, inter-core communication
+	    </p>
+			<p> 
+				<b>Abstract:</b> The emergence of tiered memory architectures has led to a renewed interest in memory management. Recent works on tiered memory management innovate on mechanisms for access tracking, page migration, and dynamic page size determination; however, they all use the same page placement algorithm---packing the hottest pages in the default tier (one with the lowest hardware-specified memory access latency). This makes an implicit assumption that, despite serving the hottest pages, the access latency of the default tier is less than that of alternate tiers. This assumption is far from real: it is well-known in the computer architecture community that, in the realistic case of multiple in-flight requests, memory access latency can be significantly larger than the hardware-specified latency. We show that, even under moderate loads, the default tier access latency can inflate to be 2.5× larger than the latency of alternate tiers; and that, under this regime, performance of state-of-the-art memory tiering systems can be 2.3× worse than the optimal.
+				<br>
+				Colloid is a memory management mechanism that embodies the principle of balancing access latencies---page placement across tiers should be performed so as to balance their average (loaded) access latencies. To realize this principle, Colloid innovates on both per-tier memory access latency measurement mechanisms, and page placement algorithms that decide the set of pages to place in each tier. We integrate Colloid with three state-of-the-art memory tiering systems---HeMem, TPP and MEMTIS. Evaluation across a wide variety of workloads demonstrates that Colloid consistently enables the underlying system to achieve near-optimal performance.
+			</p>
+			<p></p>
+		</td>
+  </tr>
+
+
+  <tr>
+  	<td>
+	    ** <b><a href="https://dl.acm.org/doi/10.1145/3694715.3695961">Uncovering Nested Data Parallelism and Data Reuse in DNN Computation with FractalTensor</a></b>
+	    <p>
+				Siran Liu (Peking University)<br>
+				Chengxiang Qi (University of Chinese Academy of Sciences)<br>
+				Ying Cao (Microsoft Research Asia)<br>
+				Chao Yang (Peking University)<br>
+				Weifang Hu, Xuanhua Shi (Huazhong University of Science and Technology)<br>
+				Fan Yang, Mao Yang (Microsoft Research Asia)
+	    </p>
+	    <p>
+	    	<b>Labels:</b> ML System, deep learning computing, inter-core communication
+	    </p>
+			<p> 
+				<b>Abstract:</b> To speed up computation, deep neural networks (DNNs) usually rely on highly optimized tensor operators. Despite the effectiveness, tensor operators are often defined empirically with ad hoc semantics. This hinders the analysis and optimization across operator boundaries. FractalTensor is a programming framework that addresses this challenge. At the core, FractalTensor is a nested list-based abstract data type (ADT), where each element is a tensor with static shape or another FractalTensor (i.e., nested). DNNs are then de-fined by high-order array compute operators like map/reduce/scan and array access operators like window/stride on FractalTensor. This new way of DNN definition explicitly exposes nested data parallelism and fine-grained data access patterns, opening new opportunities for whole program analysis and optimization. To exploit these opportunities, from the FractalTensor-based code the compiler extracts a nested multi-dimensional dataflow graph called Extended Task Dependence Graph (ETDG), which provides a holistic view of data dependency across different granularity. The ETDG is then transformed into an efficient implementation through graph coarsening, data reordering, and access materialization. Evaluation on six representative DNNs like RNN and FlashAttention on NVIDIA A100 shows that Fractal-Tensor achieves speedup by up to 5.45x and 2.14x on average through a unified solution for diverse optimizations.
+			</p>
+			<p></p>
+		</td>
+  </tr>
+
+  <tr>
+  	<td>
+	    **** <b><a href="https://dl.acm.org/doi/10.1145/3694715.3695947">Unifying serverless and microservice workloads with SigmaOS</a></b>
+	    <p>
+				Ariel Szekely, Adam Belay, Robert Morris, Frans Kaashoek (MIT)
+	    </p>
+	    <p>
+	    	<b>Labels:</b> cloud computing, serverless computing, microservice, workload consolidation
+	    </p>
+			<p> 
+				<b>Abstract:</b> Many cloud applications use both serverless functions, for bursts of stateless parallel computation, and container orchestration, for long-running microservices and tasks that need to interact. Ideally a single platform would offer the union of these systems' capabilities, but neither is sufficient to act as that single platform: serverless functions are lightweight but cannot act as servers with long-term state, while container orchestration offers general-purpose computation but instance start-up takes too long to support burst parallelism.
+				<br>
+				σOS is a new multi-tenant cloud operating system that combines the best of container orchestration and serverless in one platform with one API. σOS computations, called procs, can be long-running, stateful, and interact with each other, making them a good match for both serverless and microservice tasks. A key aspect of the σOS design is its cloud-centric API, which provides flexible management of computation, a novel abstraction for communication endpoints, σEPs---which allow procs of a tenant to communicate efficiently but prohibits procs from sending packets to other tenants---and a flexible naming system to name, for example, σEPs.
+				<br>
+				Quick proc start-up is important for serverless uses. A key enabling observation is that both serverless and microservice applications rely on cloud services for much of the work traditionally done by the local OS (e.g., access to durable storage and additional compute resources). σOS exploits this observation by providing only a small and generic local operating system image to each proc, which can be created much more quickly than a container orchestration instance since σOS need not install application-specific filesystem content or (due to σOS's σEPs) configure an isolated overlay network.
+				<br>
+				Microbenchmarks show that σOS can cold start a proc in 7.7 msec and can create 36,650 procs per second, distributing them over a 24-machine cluster. An evaluation of σOS with two microservice applications from DeathStarBench, a MapReduce application, and an image processing benchmark, shows that the σOS API supports both microservices and lambda-style computations, and provides better performance than corresponding versions on AWS Lambda and Kubernetes.
+			</p>
+			<p></p>
+		</td>
+  </tr>
+
+
 </table>
