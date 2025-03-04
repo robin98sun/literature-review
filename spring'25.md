@@ -2083,7 +2083,7 @@ and ICSI)<br>
 
 
 <a name="SOSP'24"></a>
-1. [SOSP'24](https://sigops.org/s/conferences/sosp/2024/accepted.html)
+6. [SOSP'24](https://sigops.org/s/conferences/sosp/2024/accepted.html)
 
 <table>
 
