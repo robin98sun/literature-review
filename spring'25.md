@@ -11,7 +11,7 @@ From Feb 20th, 2025
 	- [HPDC'24](#HPDC'24)
 	- [EuroSys'25](#EuroSys'25)
 	- [NSDI'24](#NSDI'24)
-	- [EuroSys'24](#EuroSys'24)
+	- [SOSP'24](#SOSP'24)
 
 	- going to collect:
 
