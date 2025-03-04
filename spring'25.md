@@ -20,7 +20,6 @@ From Feb 20th, 2025
 		https://acmsocc.org/2024/schedule.html
 		https://sc24.supercomputing.org/proceedings/tech_paper/
 		https://www.usenix.org/conference/atc24/technical-sessions
-		https://sigops.org/s/conferences/sosp/2024/accepted.html
 		https://www.usenix.org/conference/osdi24/technical-sessions
 		```
 
