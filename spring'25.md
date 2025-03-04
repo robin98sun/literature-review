@@ -13,7 +13,7 @@ From Feb 20th, 2025
 	- [NSDI'24](#NSDI'24)
 	- [EuroSys'24](#EuroSys'24)
 	- [SOSP'24](#SOSP'24)
-	- [NSDI'24](#NSDI'24)
+	- [OSDI'24](#OSDI'24)
 
 	- going to collect:
 
@@ -2080,8 +2080,6 @@ and ICSI)<br>
 
 
 
-
-
 <a name="SOSP'24"></a>
 7. [SOSP'24](https://sigops.org/s/conferences/sosp/2024/accepted.html)
 
@@ -2334,7 +2332,7 @@ and ICSI)<br>
 </table>
 
 
-
+<a name="OSDI'24"></a>
 8. [OSDI'24](https://www.usenix.org/conference/osdi24/technical-sessions)
 
 <table>
