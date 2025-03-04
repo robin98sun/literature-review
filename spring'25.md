@@ -11,7 +11,9 @@ From Feb 20th, 2025
 	- [HPDC'24](#HPDC'24)
 	- [EuroSys'25](#EuroSys'25)
 	- [NSDI'24](#NSDI'24)
+	- [EuroSys'24](#EuroSys'24)
 	- [SOSP'24](#SOSP'24)
+	- [NSDI'24](#NSDI'24)
 
 	- going to collect:
 
@@ -20,7 +22,6 @@ From Feb 20th, 2025
 		https://acmsocc.org/2024/schedule.html
 		https://sc24.supercomputing.org/proceedings/tech_paper/
 		https://www.usenix.org/conference/atc24/technical-sessions
-		https://www.usenix.org/conference/osdi24/technical-sessions
 		```
 
 <a name="ASPLOS'24"></a>
@@ -1768,7 +1769,7 @@ and ICSI)<br>
 
 
 <a name="EuroSys'24"></a>
-1. [EurySys'24](https://2024.eurosys.org/accepted-papers.html)
+6. [EurySys'24](https://2024.eurosys.org/accepted-papers.html)
 
 
 <table>
@@ -2082,7 +2083,7 @@ and ICSI)<br>
 
 
 <a name="SOSP'24"></a>
-6. [SOSP'24](https://sigops.org/s/conferences/sosp/2024/accepted.html)
+7. [SOSP'24](https://sigops.org/s/conferences/sosp/2024/accepted.html)
 
 <table>
 
@@ -2329,6 +2330,15 @@ and ICSI)<br>
 			<p></p>
 		</td>
   </tr>
+
+</table>
+
+
+
+8. [OSDI'24](https://www.usenix.org/conference/osdi24/technical-sessions)
+
+<table>
+
 
 
 </table>
