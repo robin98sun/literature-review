@@ -1156,7 +1156,7 @@ From Feb 20th, 2025
 
   <tr>
   	<td>
-	    *** <b><a href="https://arxiv.org/abs/2405.16444">SpotHedge: Serving AI Models on Spot Instances</a></b>
+	    *** <b><a href="https://arxiv.org/abs/2411.01438v2">SpotHedge: Serving AI Models on Spot Instances</a></b>
 	    <p>
 				Ziming Mao, Tian Xia, Zhanghao Wu, Wei-Lin Chiang, Tyler Griggs, Romil Bhardwaj, Zongheng Yang (UC Berkeley)<br>
 				Scott Shenker (ICSI AND UC Berkeley)<br>
