@@ -2339,4 +2339,225 @@ and ICSI)<br>
 		</td>
   </tr>
 
+  <tr>
+  	<td>
+	    <b><a href="https://www.usenix.org/conference/osdi24/presentation/fu">ServerlessLLM: Low-Latency Serverless Inference for Large Language Models</a></b>
+	    <p>
+				Yao Fu, Leyang Xue, Yeqi Huang, and Andrei-Octavian Brabete (University of Edinburgh)<br>
+				Dmitrii Ustiugov (NTU Singapore)<br>
+				Yuvraj Patel and Luo Mai (University of Edinburgh)
+	    </p>
+	    <p>
+	    	<b>Labels:</b> LLM inference
+	    </p>
+			<p> 
+				<b>Abstract:</b> This paper presents ServerlessLLM, a distributed system designed to support low-latency serverless inference for Large Language Models (LLMs). By harnessing the substantial near-GPU storage and memory capacities of inference servers, ServerlessLLM achieves effective local checkpoint storage, minimizing the need for remote checkpoint downloads and ensuring efficient checkpoint loading. The design of ServerlessLLM features three core contributions: (i) fast multi-tier checkpoint loading, featuring a new loading-optimized checkpoint format and a multi-tier loading system, fully utilizing the bandwidth of complex storage hierarchies on GPU servers; (ii) efficient live migration of LLM inference, which enables newly initiated inferences to capitalize on local checkpoint storage while ensuring minimal user interruption; and (iii) startup-time-optimized model scheduling, which assesses the locality statuses of checkpoints on each server and schedules the model onto servers that minimize the time to start the inference. Comprehensive evaluations, including microbenchmarks and real-world scenarios, demonstrate that ServerlessLLM dramatically outperforms state-of-the-art serverless systems, reducing latency by 10 - 200X across various LLM inference workloads.
+			</p>
+			<p></p>
+		</td>
+  </tr>
+
+
+  <tr>
+  	<td>
+	    <b><a href="https://www.usenix.org/conference/osdi24/presentation/sun-biao">Llumnix: Dynamic Scheduling for Large Language Model Serving</a></b>
+	    <p>
+				Biao Sun, Ziming Huang, Hanyu Zhao, Wencong Xiao, Xinyi Zhang, Yong Li, and Wei Lin (Alibaba Group)
+	    </p>
+	    <p>
+	    	<b>Labels:</b> LLM inference
+	    </p>
+			<p> 
+				<b>Abstract:</b> Inference serving for large language models (LLMs) is the key to unleashing their potential in people's daily lives. However, efficient LLM serving remains challenging today because the requests are inherently heterogeneous and unpredictable in terms of resource and latency requirements, as a result of the diverse applications and the dynamic execution nature of LLMs. Existing systems are fundamentally limited in handling these characteristics and cause problems such as severe queuing delays, poor tail latencies, and SLO violations.
+				<br>
+				We introduce Llumnix, an LLM serving system that reacts to such heterogeneous and unpredictable requests by runtime rescheduling across multiple model instances. Similar to context switching across CPU cores in modern operating systems, Llumnix reschedules requests to improve load balancing and isolation, mitigate resource fragmentation, and differentiate request priorities and SLOs. Llumnix implements the rescheduling with an efficient and scalable live migration mechanism for requests and their in-memory states, and exploits it in a dynamic scheduling policy that unifies the multiple rescheduling scenarios elegantly. Our evaluations show that Llumnix improves tail latencies by an order of magnitude, accelerates high-priority requests by up to 1.5×, and delivers up to 36% cost savings while achieving similar tail latencies, compared against state-of-the-art LLM serving systems. Llumnix is publicly available at https://github.com/AlibabaPAI/llumnix.
+			</p>
+			<p><a href="https://github.com/AlibabaPAI/llumnix">open source</a></p>
+			<p></p>
+		</td>
+  </tr>
+
+
+  <tr>
+  	<td>
+	    <b><a href="https://www.usenix.org/conference/osdi24/presentation/zhong-yinmin">DistServe: Disaggregating Prefill and Decoding for Goodput-optimized Large Language Model Serving</a></b>
+	    <p>
+				Yinmin Zhong and Shengyu Liu (Peking University)<br>
+				Junda Chen (UC San Diego) <br>
+				Jianbo Hu (Peking University)<br>
+				Yibo Zhu, StepFun; Xuanzhe Liu and Xin Jin (Peking University)<br>
+				Hao Zhang (UC San Diego)
+	    </p>
+	    <p>
+	    	<b>Labels:</b> LLM inference
+	    </p>
+			<p> 
+				<b>Abstract:</b> DistServe improves the performance of large language models (LLMs) serving by disaggregating the prefill and decoding computation. Existing LLM serving systems colocate the two phases and batch the computation of prefill and decoding across all users and requests. We find that this strategy not only leads to strong prefill-decoding interferences but also couples the resource allocation and parallelism plans for both phases. LLM applications often emphasize individual latency for each phase: time to first token (TTFT) for the prefill phase and time per output token (TPOT) of each request for the decoding phase. In the presence of stringent latency requirements, existing systems have to prioritize one latency over the other, or over-provision compute resources to meet both.
+				<br>
+				DistServe assigns prefill and decoding computation to different GPUs, hence eliminating prefill-decoding interferences. Given the application's TTFT and TPOT requirements, DistServe co-optimizes the resource allocation and parallelism strategy tailored for each phase. DistServe also places the two phases according to the serving cluster's bandwidth to minimize the communication caused by disaggregation. As a result, DistServe significantly improves LLM serving performance in terms of the maximum rate that can be served within both TTFT and TPOT constraints on each GPU. Our evaluations show that on various popular LLMs, applications, and latency requirements, DistServe can serve 7.4× more requests or 12.6× tighter SLO, compared to state-of-the-art systems, while staying within latency constraints for > 90% of requests.
+			</p>
+			<p></p>
+		</td>
+  </tr>
+
+  <tr>
+  	<td>
+	    <b><a href="https://www.usenix.org/conference/osdi24/presentation/lin-zhiqi">nnScaler: Constraint-Guided Parallelization Plan Generation for Deep Learning Training</a></b>
+	    <p>
+				Zhiqi Lin (University of Science and Technology of China)<br>
+				Youshan Miao, Quanlu Zhang, Fan Yang, and Yi Zhu (Microsoft Research)<br>
+				Cheng Li (University of Science and Technology of China)<br>
+				Saeed Maleki, xAI; Xu Cao, Ning Shang, Yilei Yang, Weijiang Xu, and Mao Yang (Microsoft Research)<br>
+				Lintao Zhang, BaseBit Technologies; Lidong Zhou (Microsoft Research)
+	    </p>
+	    <p>
+	    	<b>Labels:</b> DNN training, parallelization
+	    </p>
+			<p> 
+				<b>Abstract:</b> DistServe improves the performance of large language models (LLMs) serving by disaggregating the prefill and decoding computation. Existing LLM serving systems colocate the two phases and batch the computation of prefill and decoding across all users and requests. We find that this strategy not only leads to strong prefill-decoding interferences but also couples the resource allocation and parallelism plans for both phases. LLM applications often emphasize individual latency for each phase: time to first token (TTFT) for the prefill phase and time per output token (TPOT) of each request for the decoding phase. In the presence of stringent latency requirements, existing systems have to prioritize one latency over the other, or over-provision compute resources to meet both.
+				<br>
+				DistServe assigns prefill and decoding computation to different GPUs, hence eliminating prefill-decoding interferences. Given the application's TTFT and TPOT requirements, DistServe co-optimizes the resource allocation and parallelism strategy tailored for each phase. DistServe also places the two phases according to the serving cluster's bandwidth to minimize the communication caused by disaggregation. As a result, DistServe significantly improves LLM serving performance in terms of the maximum rate that can be served within both TTFT and TPOT constraints on each GPU. Our evaluations show that on various popular LLMs, applications, and latency requirements, DistServe can serve 7.4× more requests or 12.6× tighter SLO, compared to state-of-the-art systems, while staying within latency constraints for > 90% of requests.
+			</p>
+			<p></p>
+		</td>
+  </tr>
+
+  <tr>
+  	<td>
+	    <b><a href="https://www.usenix.org/conference/osdi24/presentation/bin-faisal">When will my ML Job finish? Toward providing Completion Time Estimates through Predictability-Centric Scheduling</a></b>
+	    <p>
+				Abdullah Bin Faisal, Noah Martin, Hafiz Mohsin Bashir, Swaminathan Lamelas, and Fahad R. Dogar (Tufts University)
+	    </p>
+	    <p>
+	    	<b>Labels:</b> ML job completion time estimation
+	    </p>
+			<p> 
+				<b>Abstract:</b> In this paper, we make a case for providing job completion time estimates to GPU cluster users, similar to providing the delivery date of a package or arrival time of a booked ride. Our analysis reveals that providing predictability can come at the expense of performance and fairness. Existing GPU schedulers optimize for extreme points in the trade-off space, making them either extremely unpredictable or impractical.
+				<br>
+				To address this challenge, we present PCS, a new scheduling framework that aims to provide predictability while balancing other traditional objectives. The key idea behind PCS is to use Weighted-Fair-Queueing (WFQ) and find a suitable configuration of different WFQ parameters (e.g., queue weights) that meets specific goals for predictability. It uses a simulation-aided search strategy to efficiently discover WFQ configurations that lie around the Pareto front of the trade-off space between these objectives. We implement and evaluate PCS in the context of scheduling ML training workloads on GPUs. Our evaluation, on a small-scale GPU testbed and larger-scale simulations, shows that PCS can provide accurate completion time estimates while marginally compromising on performance and fairness.
+			</p>
+			<p></p>
+		</td>
+  </tr>
+
+  <tr>
+  	<td>
+	    <b><a href="https://www.usenix.org/conference/osdi24/presentation/kumar">Optimizing Resource Allocation in Hyperscale Datacenters: Scalability, Usability, and Experiences</a></b>
+	    <p>
+				Neeraj Kumar, Pol Mauri Ruiz, Vijay Menon, Igor Kabiljo, Mayank Pundir, Andrew Newell, Daniel Lee, Liyuan Wang, and Chunqiang Tang (Meta Platforms)
+	    </p>
+	    <p>
+	    	<b>Labels:</b> cloud computing, resource scheduling
+	    </p>
+			<p> 
+				<b>Abstract:</b> Meta's private cloud uses millions of servers to host tens of thousands of services that power multiple products for billions of users. This complex environment has various optimization problems involving resource allocation, including hardware placement, server allocation, ML training & inference placement, traffic routing, database & container migration for load balancing, grouping serverless functions for locality, etc.
+				<br>
+				The main challenges for a reusable resource-allocation framework are its usability and scalability. Usability is impeded by practitioners struggling to translate real-life policies into precise mathematical formulas required by formal optimization methods, while scalability is hampered by NP-hard problems that cannot be solved efficiently by commercial solvers.
+				<br>
+				These challenges are addressed by Rebalancer, Meta's resource-allocation framework. It has been applied to dozens of large-scale use cases over the past seven years, demonstrating its usability, scalability, and generality. At the core of Rebalancer is an expression graph that enables its optimization algorithm to run more efficiently than past algorithms. Moreover, Rebalancer offers a high-level specification language to lower the barrier for adoption by systems practitioners.
+			</p>
+			<p></p>
+		</td>
+  </tr>
+
+  <tr>
+  	<td>
+	    <b><a href="https://www.usenix.org/conference/osdi24/presentation/choudhury">MAST: Global Scheduling of ML Training across Geo-Distributed Datacenters at Hyperscale</a></b>
+	    <p>
+				Arnab Choudhury, Meta Platforms; Yang Wang (Meta Platforms and The Ohio State University)<br>
+				Tuomas Pelkonen (Meta Platforms)<br>
+				Kutta Srinivasan (LinkedIn)<br>
+				Abha Jain, Shenghao Lin, Delia David, Siavash Soleimanifard, Michael Chen, Abhishek Yadav, Ritesh Tijoriwala, Denis Samoylov, and Chunqiang Tang (Meta Platforms)
+	    </p>
+	    <p>
+	    	<b>Labels:</b> ML training
+	    </p>
+			<p> 
+				<b>Abstract:</b> In public clouds, users must manually select a datacenter region to upload their ML training data and launch ML training workloads in the same region to ensure data and computation colocation. Unfortunately, isolated decisions by individual users can lead to a mismatch between workload demand and hardware supply across regions, hurting the cloud provider's hardware utilization and profitability. To address this problem in Meta's hyperscale private cloud, we provide a global-scheduling abstraction to all ML training workloads. Users simply submit their training workloads to MAST, our global scheduler, and rely on it to intelligently place both data and training workloads to different regions. We describe three design principles that enable MAST to schedule complex ML training workloads at a global scale: temporal decoupling, scope decoupling, and exhaustive search. MAST successfully balances the load across global regions. Before MAST, the most overloaded region had a GPU demand-to-supply ratio of 2.63 for high-priority workloads. With MAST, this ratio has been reduced to 0.98, effectively eliminating the overload.
+			</p>
+			<p></p>
+		</td>
+  </tr>
+
+  <tr>
+  	<td>
+	    <b><a href="https://www.usenix.org/conference/osdi24/presentation/wu-bingyang">dLoRA: Dynamically Orchestrating Requests and Adapters for LoRA LLM Serving</a></b>
+	    <p>
+				Bingyang Wu, Ruidong Zhu, and Zili Zhang (School of Computer Science, Peking University)<br>
+				Peng Sun (Shanghai AI Lab)<br>
+				Xuanzhe Liu and Xin Jin (School of Computer Science, Peking University)
+	    </p>
+	    <p>
+	    	<b>Labels:</b> LLM serving
+	    </p>
+			<p> 
+				<b>Abstract:</b> Low-rank adaptation (LoRA) is a popular approach to finetune pre-trained large language models (LLMs) to specific domains. This paper introduces dLoRA, an inference serving system for LoRA models. dLoRA achieves high serving efficiency by dynamically orchestrating requests and LoRA adapters in terms of two aspects: (i) dynamically merge and unmerge adapters with the base model; and (ii) dynamically migrate requests and adapters between different worker replicas. These capabilities are designed based on two insights. First, despite the allure of batching without merging a LoRA adapter into the base model, it is not always beneficial to unmerge, especially when the types of requests are skewed. Second, the autoregressive nature of LLM requests introduces load imbalance between worker replicas due to varying input and output lengths, even if the input requests are distributed uniformly to the replicas. We design a credit-based batching algorithm to decide when to merge and unmerge, and a request-adapter co-migration algorithm to decide when to migrate. The experimental results show that dLoRA improves the throughput by up to 57.9× and 26.0×, compared to vLLM and HugginFace PEFT, respectively. Compared to the concurrent work S-LoRA, dLoRA achieves up to 1.8× lower average latency.
+			</p>
+			<p></p>
+		</td>
+  </tr>
+
+
+  <tr>
+  	<td>
+	    <b><a href="https://www.usenix.org/conference/osdi24/presentation/lin-chaofan">Parrot: Efficient Serving of LLM-based Applications with Semantic Variable</a></b>
+	    <p>
+				Chaofan Lin (Shanghai Jiao Tong University)<br>
+				Zhenhua Han, Chengruidong Zhang, Yuqing Yang, and Fan Yang (Microsoft Research)<br>
+				Chen Chen (Shanghai Jiao Tong University)<br>
+				Lili Qiu (Microsoft Research)
+	    </p>
+	    <p>
+	    	<b>Labels:</b> LLM serving
+	    </p>
+			<p> 
+				<b>Abstract:</b> The rise of large language models (LLMs) has enabled LLM-based applications (a.k.a. AI agents or co-pilots), a new software paradigm that combines the strength of LLM and conventional software. Diverse LLM applications from different tenants could design complex workflows using multiple LLM requests to accomplish one task. However, they have to use the over-simplified request-level API provided by today's public LLM services, losing essential application-level information. Public LLM services have to blindly optimize individual LLM requests, leading to sub-optimal end-to-end performance of LLM applications.
+				<br>
+				This paper introduces Parrot, an LLM service system that focuses on the end-to-end experience of LLM-based applications. Parrot proposes Semantic Variable, a unified abstraction to expose application-level knowledge to public LLM services. A Semantic Variable annotates an input/output variable in the prompt of a request, and creates the data pipeline when connecting multiple LLM requests, providing a natural way to program LLM applications. Exposing Semantic Variables to the public LLM service allows it to perform conventional data flow analysis to uncover the correlation across multiple LLM requests. This correlation opens a brand-new optimization space for the end-to-end performance of LLM-based applications. Extensive evaluations demonstrate that Parrot can achieve up to an order-of-magnitude improvement for popular and practical use cases of LLM applications.
+			</p>
+			<p></p>
+		</td>
+  </tr>
+
+  <tr>
+  	<td>
+	    <b><a href="https://www.usenix.org/conference/osdi24/presentation/sheng">Fairness in Serving Large Language Models</a></b>
+	    <p>
+				Ying Sheng (UC Berkeley and Stanford University)<br>
+				Shiyi Cao, Dacheng Li, Banghua Zhu, and Zhuohan Li (UC Berkeley)<br>
+				Danyang Zhuo (Duke University)<br>
+				Joseph E. Gonzalez and Ion Stoica (UC Berkeley)
+	    </p>
+	    <p>
+	    	<b>Labels:</b> LLM serving, fairness
+	    </p>
+			<p> 
+				<b>Abstract:</b> High-demand LLM inference services (e.g., ChatGPT and BARD) support a wide range of requests from short chat conversations to long document reading. To ensure that all client requests are processed fairly, most major LLM inference services have request rate limits, to ensure that no client can dominate the request queue. However, this rudimentary notion of fairness also results in under-utilization of the resources and poor client experience when there is spare capacity. While there is a rich literature on fair scheduling, serving LLMs presents new challenges due to their unpredictable request lengths and their unique batching characteristics on parallel accelerators. This paper introduces the definition of LLM serving fairness based on a cost function that accounts for the number of input and output tokens processed. To achieve fairness in serving, we propose a novel scheduling algorithm, the Virtual Token Counter (VTC), a fair scheduler based on the continuous batching mechanism. We prove a 2× tight upper bound on the service difference between two backlogged clients, adhering to the requirement of work-conserving. Through extensive experiments, we demonstrate the superior performance of VTC in ensuring fairness, especially in contrast to other baseline methods, which exhibit shortcomings under various conditions. The reproducible code is available at https://github.com/Ying1123/VTC-artifact.
+				<p><a href="https://www.usenix.org/conference/osdi24/presentation/sheng">open source</a></p>
+			</p>
+			<p></p>
+		</td>
+  </tr>
+
+  <tr>
+  	<td>
+	    <b><a href="https://www.usenix.org/conference/osdi24/presentation/zhuang">MonoNN: Enabling a New Monolithic Optimization Space for Neural Network Inference Tasks on Modern GPU-Centric Architectures</a></b>
+	    <p>
+				Donglin Zhuang (The University of Sydney)<br>
+				Zhen Zheng (Alibaba Group)<br>
+				Haojun Xia (The University of Sydney)<br>
+				Xiafei Qiu, Junjie Bai, and Wei Lin (Alibaba Group)<br>
+				Shuaiwen Leon Song (The University of Sydney)
+	    </p>
+	    <p>
+	    	<b>Labels:</b> LLM serving
+	    </p>
+			<p> 
+				<b>Abstract:</b> In this work, we reveal that the kernel-by-kernel execution scheme in the existing machine learning optimizing compilers is no longer effective in fully utilizing hardware resources provided by the advances of modern GPU architectures. Specifically, such scheme suffers from severe non-computation overhead and off-chip memory traffic, making the optimization efforts from the state-of-the-art compiler techniques greatly attenuated on the newer generations of GPUs. To address this emerging challenge, we propose MonoNN, the first machine learning optimizing compiler that enables a new monolithic design and optimization space for common static neural network (NN) inference tasks on a single GPU. MonoNN can accommodate an entire neural network into a single GPU kernel, drastically reducing non-computation overhead and providing further fine-grained optimization opportunities from the newly formed monolithic optimization space. Most importantly, MonoNN identifies the resource incompatibility issue between various NN operators as the key design bottleneck for creating such a monolithic optimization space. Then MonoNN effectively tackles it by systematically exploring and exploiting the parallelism compensation strategy and resource trade-offs across different types of NN computations, and by proposing a novel schedule-independent group tuning technique to significantly shrink the extremely large tuning space. Finally, MonoNN provides a compiler implementation that incorporates our proposed optimizations and automatically generates highly efficient kernel code. Extensive evaluation on a set of popular production inference tasks demonstrates that MonoNN achieves an average speedup of 2.01× over the state-of-the-art frameworks and compilers. Specifically, MonoNN outperforms TVM, TensorRT, XLA, and AStitch by up to 7.3×, 5.9×, 1.7× and 2.9× in terms of end-to-end inference performance, respectively. MonoNN source code is publicly available at https://github.com/AlibabaResearch/mononn
+				<p><a href="https://github.com/AlibabaResearch/mononn">open source</a></p>
+			</p>
+			<p></p>
+		</td>
+  </tr>
+
 </table>
