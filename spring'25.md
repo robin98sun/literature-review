@@ -1851,27 +1851,6 @@ and ICSI)<br>
 		</td>
   </tr>
 
-  <tr>
-  	<td>
-	    ** <b><a href="https://dl.acm.org/doi/10.1145/3627703.3629575">Totoro: A Scalable Federated Learning Engine for the Edge</a></b>
-	    <p>
-				Cheng-Wei Ching (University of California Santa Cruz)<br>
-				Xin Chen (Georgia Institute of Technology)<br>
-				Taehwan Kim, Bo Ji (Virginia Tech)<br>
-				Qingyang Wang (Louisiana State University)<br>
-				Dilma Da Silva (Texas A&M University)<br>
-				Liting Hu (University of California Santa Cruz and Virginia Tech)
-	    </p>
-	    <p>
-	    	<b>Labels:</b> ML system, edge computing, FL
-	    </p>
-			<p> 
-				<b>Abstract:</b> Federated Learning (FL) is an emerging distributed machine learning (ML) technique that enables in-situ model training and inference on decentralized edge devices. We propose Totoro, a novel scalable FL engine, that enables massive FL applications to run simultaneously on edge networks. The key insight is to explore a distributed hash table (DHT)-based peer-to-peer (P2P) model to re-architect the centralized FL system design into a fully decentralized one. In contrast to previous studies where many FL applications shared one centralized parameter server, Totoro assigns a dedicated parameter server to each individual application. Any edge node can act as any application's coordinator, aggregator, client selector, worker (participant device), or any combination of the above, thereby radically improving scalability and adaptivity. Totoro introduces three innovations to realize its design: a locality-aware P2P multi-ring structure, a publish/subscribe-based forest abstraction, and a bandit-based exploitation-exploration path planning model. Real-world experiments on 500 Amazon EC2 servers show that Totoro scales gracefully with the number of FL applications and N edge nodes, speeds up the total training time by 1.2 × -14.0×, achieves O (logN) hops for model dissemination and gradient aggregation with millions of nodes, and efficiently adapts to the practical edge networks and churns.
-			</p>
-			<p></p>
-		</td>
-  </tr>
-
 
   <tr>
   	<td>
