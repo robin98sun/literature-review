@@ -2580,6 +2580,7 @@ and ICSI)<br>
 				Feng Ren, Mingxing Zhang, Yongwei Wu, and Weimin Zheng (Tsinghua University)<br>
 				Xinran Xu (Moonshot AI)
 	    </p>
+	    <p><b><i>Awarded Best Paper!</i></b></p>
 	    <p>
 	    	<b>Labels:</b> LLM serving, KV cache
 	    </p>
