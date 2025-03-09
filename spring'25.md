@@ -16,6 +16,7 @@ From Feb 20th, 2025
 	- [EuroSys'24](#EuroSys'24)
 	- [SOSP'24](#SOSP'24)
 	- [OSDI'24](#OSDI'24)
+	- [FAST'25](#FAST'25)
 
 	- going to collect:
 
